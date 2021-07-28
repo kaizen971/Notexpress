@@ -1,0 +1,130 @@
+.category {
+    display: inline-block;
+    padding: 1rem;
+    max-width: 80%;
+    margin-left: 3%;
+}
+
+.category p {
+    border: 1px solid snow;
+    background-color: snow;
+    padding: 1rem;
+}
+
+
+body {
+    background-color: #946060;
+}
+
+#app {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.flashcard-list {
+    /* padding-left: 0; */
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.flashcard-list li {
+    list-style-type: none;
+    padding: 10px 10px;
+    transition: all 0.3s ease;
+}
+
+.flashcard-list img {
+    width: 100%;
+}
+
+.card-back, .card-front {
+    background: white;
+    height: 200px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0rem;
+    -webkit-box-shadow: 9px 10px 22px -8px rgba(209, 193, 209, .5);
+    -moz-box-shadow: 9px 10px 22px -8px rgba(209, 193, 209, .5);
+    box-shadow: 9px 10px 22px -8px rgba(209,193, 209, .5);
+    will-change: transform;
+   animation-duration: 1s;
+   animation-name: slidein;
+    background-image: linear-gradient(to bottom right, #FFCE00, #FE4880);
+    
+    
+}
+
+@keyframes slidein {
+    from {
+        opacity:0;
+        transform: scale(0);
+        
+        
+    }
+    to {
+        opacity:1;
+      
+         transform: scale(1);
+    }
+}
+
+.flashcard-list li:hover{
+    transform: scale(1.1);
+}
+
+.flip-enter-active {
+    transition: all 0.4s ease;
+}
+
+.flip-leave-active {
+    display: none;
+}
+
+.flip-enter, .flip-leave {
+  
+     animation-duration: 1s;
+   
+    
+}
+
+@keyframes rotatein {
+    from {
+        opacity:1;
+        transform: rotateY(0deg);
+        
+        
+    }
+    to {
+        opacity:1;
+        
+          transform: rotateY(180deg);
+    }
+}
+
+h1, h2, p, .selected-div {
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.selected {
+    list-style-type: none;
+}
+
+.selected img {
+    width: 20%;
+}
+
+button {
+    margin-left: 8rem;
+}
+  
+  
+contenu{
+    
+    
+    text-align:center;
+    
+    
+}
+
