@@ -2,24 +2,6 @@
 
 
 
-
-Vue.component('category-part', {
-  data: function() {
-    return {
-      categ: [
-        {category: "People"},
-        {category: "Architecture"},
-        {category: "Food"},
-        {category: "Art"},
-        {category: "Travel"}
-      ]
-    }
-  },
-  template: `<div><div class="category" v-for="cat in categ">
-              <p>{{ cat.category }}</p>
-            </div></div>`
-})
-
 /*const cards = [
   
   {
@@ -39,17 +21,17 @@ Vue.component('category-part', {
 
 
 
-];*/
+];*/   // Exemple d'un tableau objet
 
 let cards;
-if (localStorage.getItem("testJSON")==null){
+if (localStorage.getItem("testJSON")==null){ // Si le localStorage est vide , retourner un tableau vide
    cards = [
   
  ]
-}
-else{
-  let text = localStorage.getItem("testJSON");
-   cards = JSON.parse(text);
+} 
+else{ // sinon retourner le tableau présent dans le cache. 
+  let text = localStorage.getItem("testJSON"); /* Récupere le cache ayant la clé "testJson" */
+   cards = JSON.parse(text); /* Convertie le JSon(en format text) en objet(format objet) */
   
   
 }
@@ -59,10 +41,10 @@ else{
 // On vise la div générale du html pour initialiser le projet avec Vue
 let app = new Vue({
     el: '#app',
-    // Les données, aussi appelées état de l'application vont être contenues dans un autre objet
-    data: {
-      title: '',
+    // Les données qu'on utilisera dans les objets. 
+    data: { 
       question: '',
+      reponse: '',
       cards: cards,
       
      
@@ -71,37 +53,39 @@ let app = new Vue({
     // Ici seront contenues toutes les fonctions de l'appli
     methods: {
       
-      save: function(){
+      save: function(){ // Sauvegarde une fiche grâce au input dans le cache.
         
-        let titleInput = document.querySelector('#title');
-        let questionInput = document.querySelector('#question')
+        let questionInput = document.querySelector('#question'); /* Récupere la variable présent dans le input de réponse*/
+        let reponseInput = document.querySelector('#reponse') /* Récupere la variable présent dans le input de question*/
         
-        let objet = {
+        let objet = { /* Création d'un objet */
           
-          title : titleInput.value,
+          
           
           question: questionInput.value,
+
+          reponse : reponseInput.value,
           
-          flipped: false
+          flipped: false /* Important pour le flippe de la carte */
           
         }
-          console.log(objet);
           
-        cards.push(objet);
+          
+        cards.push(objet); /* Ajout dans le tableau l'objet */
         
          
          
-         const myJSON = JSON.stringify(cards);
-          localStorage.setItem("testJSON", myJSON);
+         const myJSON = JSON.stringify(cards); 
+          localStorage.setItem("testJSON", myJSON); /* Convertie en JSON avec la key "testJSON" */
         
       },
       
-     toggleCard: function(card) {
+     toggleCard: function(card) { // Changement de classe d'un élement objet cards. Switch entre flipped et !flipped
         card.flipped = !card.flipped
-        console.log("lancement");
+       
       },
       
-      Clear:function(){
+      Clear:function(){ // Supression du cache .
         
         localStorage.removeItem("testJSON");
         
@@ -112,4 +96,6 @@ let app = new Vue({
     }
     
 });
+
+
 
