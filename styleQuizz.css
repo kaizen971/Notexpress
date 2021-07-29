@@ -37,6 +37,9 @@ h2 {
     text-indent: 0;
     text-align: center;
     position: relative;
-    top: 30px;
     border: 1px solid black;
+}
+
+.carousel-indicators {
+    bottom: -20px;
 }
