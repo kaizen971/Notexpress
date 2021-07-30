@@ -1,122 +1,8 @@
-.category {
-    display: inline-block;
-    padding: 1rem;
-    max-width: 80%;
-    margin-left: 3%;
-}
-
-.category p {
-    border: 1px solid snow;
-    background-color: snow;
-    padding: 1rem;
-}
-
-#app {
-    max-width: 90%;
-    margin: 0 auto;
-}
-
-.flashcard-list {
-    /* padding-left: 0; */
-    display: flex;
-    flex-flow: row wrap;
-}
-
-.flashcard-list li {
-    list-style-type: none;
-    padding: 10px 10px;
-    transition: all 0.3s ease;
-}
-
-.flashcard-list img {
-    width: 100%;
-}
-
-.card-back,
-.card-front {
-    background: white;
-    height: 200px;
-    width: 300px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0rem;
-    -webkit-box-shadow: 9px 10px 22px -8px rgba(209, 193, 209, 0.5);
-    -moz-box-shadow: 9px 10px 22px -8px rgba(209, 193, 209, 0.5);
-    box-shadow: 9px 10px 22px -8px rgba(209, 193, 209, 0.5);
-    will-change: transform;
-    animation-duration: 1s;
-    animation-name: slidein;
-    background-image: linear-gradient(to bottom right, #ffce00, #fe4880);
-}
-
-@keyframes slidein {
-    from {
-        opacity: 0;
-        transform: scale(0);
-    }
-    to {
-        opacity: 1;
-
-        transform: scale(1);
-    }
-}
-
-.flashcard-list li:hover {
-    transform: scale(1.1);
-}
-
-.flip-enter-active {
-    transition: all 0.4s ease;
-}
-
-.flip-leave-active {
-    display: none;
-}
-
-.flip-enter,
-.flip-leave {
-    animation-duration: 1s;
-}
-
-@keyframes rotatein {
-    from {
-        opacity: 1;
-        transform: rotateY(0deg);
-    }
-    to {
-        opacity: 1;
-
-        transform: rotateY(180deg);
-    }
-}
-
-h1,
-h2,
-p,
-.selected-div {
-    text-align: center;
-    padding-top: 1rem;
-}
-
-.selected {
-    list-style-type: none;
-}
-
-.selected img {
-    width: 20%;
-}
-
-button {
-    margin-left: 8rem;
-}
-
-contenu {
-    text-align: center;
-}
 /********************
 Adrien : CSS Page d'accueil
 ********************/
 
+/* HEADER  */
 .header {
     background-color: #dba67b;
 }
@@ -128,25 +14,35 @@ Adrien : CSS Page d'accueil
     border-radius: 20px;
     margin-right: 0.5em;
     font-size: 2.5em;
-    transition: all 0.3s;
+    transition: all 0.4s ease;
 }
 .btn:hover {
     background-color: #a55c55;
     transform: scale(1.2);
 }
+/* Titre du header  */
+.header h1 {
+    font-family: "Teko", sans-serif;
+    color: #fff;
+    font-size: 4em;
+    transition: all 0.4s ease;
+}
+.header h1:hover {
+    transform: scale(1.2);
+}
 
 /* Logos du header sauf bouton "connected" */
-.fa-home,
-.fa-sticky-note {
+.fa-home {
     color: #a55c55;
     font-size: 3em;
     padding: 25px;
-    transition: all 0.3s;
+    transition: all 0.4s ease;
 }
 .fa-home:hover,
 .fa-sticky-note:hover {
     transform: scale(1.2);
 }
+/* FIN HEADER  */
 
 /* Liste de logos  */
 .card-logo .far,
@@ -156,7 +52,7 @@ Adrien : CSS Page d'accueil
     padding: 20px;
     color: #dba67b;
     padding: 1em 1.5em 3em 1.5em;
-    transition: all 0.3s;
+    transition: all 0.4s ease;
 }
 .card-logo .far:hover,
 .card-logo .fas:hover,
@@ -191,12 +87,13 @@ body {
     display: flex;
     font-size: 3.2em;
     justify-content: center;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
 }
 
 /* La case Integration 1*/
 /* La case Integration 1*/
 .card-inte {
+    transition: all 0.4s;
     text-align: center;
     color: #fff;
     background-color: #a55c55;
@@ -204,7 +101,6 @@ body {
     padding: 3em;
     border-radius: 8em;
     margin: 2em 4em 2em 4em;
-    transition: all 0.4s;
     box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
 }
 /* La case Integration au survol 2*/
@@ -235,6 +131,7 @@ body {
 /* La case extensions 1*/
 /* La case extensions 1*/
 .card-extension {
+    transition: all 0.4s ease;
     text-align: center;
     color: #fff;
     background-color: #a55c55;
@@ -242,7 +139,6 @@ body {
     padding: 3em;
     border-radius: 8em;
     margin: 2em 4em 2em 4em;
-    transition: all 0.4s;
     box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
 }
 /* La case Extension au survol 2*/
@@ -274,6 +170,7 @@ body {
 /* La case developper 1*/
 /* La case developper 1*/
 .card-dev {
+    transition: all 0.4s;
     text-align: center;
     color: #fff;
     background-color: #a55c55;
@@ -281,7 +178,6 @@ body {
     padding: 3em;
     border-radius: 8em;
     margin: 2em 4em 2em 4em;
-    transition: all 0.4s;
     box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
 }
 /* La case Developper au survol 2*/
@@ -310,26 +206,25 @@ body {
     font-size: 3em;
 }
 
-/* La case qcm */
+/* La case qcm 1*/
+/* La case qcm 1*/
 .card-qcm {
+    transition: all 0.4s ease;
     color: #fff;
     background-color: #dba67b;
     width: 40%;
     padding: 3em 5em 3em 5em;
     padding: 3em;
     border-radius: 7em;
-    margin: 5em auto;
+    margin: 5em auto 8em;
     text-align: center;
-    transition: all 0.3s;
     box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
 }
 .card-qcm:hover {
     border-radius: 5em;
 }
-/* La case developper 1*/
-/* La case developper 1*/
 
-/* La case Developper au survol 2*/
+/* La case qcm au survol 2*/
 .card-qcm:hover {
     font-style: italic;
     transform: scale(1.2);
@@ -338,19 +233,43 @@ body {
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 
-/* Contenu caché de Developper 3*/
+/* Contenu caché de qcm 3*/
 .qcm-hover {
     opacity: 0;
     color: #492825;
     font-size: 1.5em;
 }
 
-/* Contenu devient visible au survol de Developper  4*/
+/* Contenu devient visible au survol de qcm  4*/
 .card-qcm:hover .qcm-hover {
     opacity: 1;
 }
-/* Les logos de Developper 5*/
+
+/* Les logos de qcm 5*/
 .card-qcm i {
     margin: 1em 0.5em;
     font-size: 3em;
+}
+
+/* FOOTER TIME  */
+.footer {
+    background-color: #a55c55;
+}
+
+/* Logo footer */
+.footer .fa-copyright,
+.footer .fa-home {
+    color: #fff;
+    font-size: 3em;
+    margin-right: 1em;
+    transition: all 0.4s ease;
+}
+.footer .fa-copyright:hover {
+    transform: scale(1.2);
+}
+
+/* Produce by  */
+.footer p {
+    color: #fff;
+    font-size: 2em;
 }
