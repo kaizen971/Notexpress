@@ -11,10 +11,14 @@
             integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
             crossorigin="anonymous"
         />
-        <!-- POLICE GOOGLE FONTS  -->
+        <!-- POLICE GOOGLE FONTS BODY -->
 			<link rel="preconnect" href="https://fonts.googleapis.com">
 			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
 			<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+		<!-- POLICE GOOGLE FONTS H1 -->
+			<link rel="preconnect" href="https://fonts.googleapis.com">
+			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+			<link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
         <!-- BOOTSTRAP  -->
         <link
             rel="stylesheet"
@@ -28,14 +32,12 @@
     </head>
 
     <body>
-            
-
         <!-- NAVBAR BOOTSWATCH -->
         <nav class="navbar header">
             <a href="#home">
                 <i class="fas fa-home logoHome"></i>
             </a>
-			<i class="far fa-sticky-note"></i>
+			<h1>Note Express</h1>
             <!-- Button trigger modal -->
             <i
                 class="fas fa-user btn btn-primary"
@@ -43,6 +45,7 @@
                 data-bs-target="#exampleModal"
             ></i>
         </nav>
+		<!-- FIN NAVBAR BOOTSWATCH -->
 		<!-- Modal -->
             <div
                 class="modal fade"
@@ -86,17 +89,15 @@
                 </div>
             </div>
         </div>
-		<!-- FIN NAVBAR BOOTSWATCH -->
+		<!-- Fin du modal -->
 
         <!-- Liste Logo  -->
         <div class="card-logo">
+			<i class="fas fa-code"></i>
             <i class="far fa-file-code"></i>
             <i class="fab fa-html5"></i>
-            <i class="fas fa-code"></i>
             <i class="fab fa-node-js"></i>
             <i class="far fa-check-circle"></i>
-            <i class="far fa-check-square"></i>
-            <i class="fas fa-user"></i>
             <i class="fab fa-vuejs"></i>
             <i class="fab fa-github"></i>
             <i class="fab fa-php"></i>
@@ -104,6 +105,7 @@
             <i class="fas fa-plus"></i>
             <i class="fab fa-bootstrap"></i>
             <i class="fab fa-css3"></i>
+			<i class="fas fa-code"></i>
         </div>
         <!-- Bloc Intégration  -->
         <section class="flex">
@@ -113,7 +115,7 @@
 				<i class="fas fa-code"></i>
                 <h3>Intégration</h3>
 				<div class="inte-hover">
-					<br>Ici, vous pouvez retrouver des fiches & questions sur les thèmes suivants :</br> <strong>HTML || CSS</strong></p>
+					<br>Ici, vous pouvez retrouver des fiches & questions sur les thèmes suivants :</br><strong>HTML || CSS</strong></p>
 				</div>
             </div>
 			
@@ -124,7 +126,7 @@
 				<i class="fab fa-github"></i>
                 <h3>Extension</h3>
 				<div class="extension-hover">
-					<p>Ici, vous pouvez retrouver des fiches & questions sur les thèmes suivants : <strong>BootStrap || Vue || Git</strong></p>
+					<p>Ici, vous pouvez retrouver des fiches & questions sur les thèmes suivants : </br><strong>BootStrap || Vue || Git</strong></p>
 				</div>
             </div>
             <!-- Bloc Développement  -->
@@ -134,7 +136,7 @@
 				<i class="fab fa-php"></i>
                 <h3>Développement</h3>
 				<div class="dev-hover">
-					<p>Ici, vous pouvez retrouver des fiches & questions sur les thèmes suivants : <strong>JavaScript || PhP</strong></p>
+					<p>Ici, vous pouvez retrouver des fiches & questions sur les thèmes suivants : </br><strong>JavaScript || PhP</strong></p>
 				</div>
             </div>
 			
@@ -149,6 +151,17 @@
 			</div>
         </div>
 
+		<!-- FOOTER -->
+        <nav class="navbar footer">
+            <a href="#home">
+                <i class="fas fa-home logoHome"></i>
+            </a>
+			<p>Produce by : <em>Maï | Raph | Jordan | Dav | A.D</em></p>
+			<a href="#">
+				<i class="far fa-copyright"></i> 
+			</a>  
+        </nav>
+		<!-- FIN FOOTER --> 
 
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
         <script src="./app.js"></script>
