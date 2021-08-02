@@ -134,9 +134,31 @@ Quelle valeur de la propriété text-decoration n’existe pas ?
 
 ## Module 2
 ### Question 1
+Comment applique-t-on des propriétés à une balise html ?
+- .nomBalise {}
+- #nomBalise {}
+//- nomBalise {}
 ### Question 2
+Quel format d'identifiant est incorrect ?
+// - 3identifiant
+- identifiant3
+- identifiant_3
+- identifiant-3
 ### Question 3
-
+Comment faire une sélection multiple ?
+// - En séparant avec une virgule : h1, h2, h3 {}
+- En séparant avec un espace : h1 h2 h3 {}
+- En séparant avec un point-virgul : h1; h2; h3 {}
+### Question 4
+On veut sélectionner tous les éléments p d'un article, pour cela on écrit :
+// - article p {}
+- article > p {}
+- article:p {}
+### Question 5
+On veut sélectionner uniquement les éléments p descendants direct d'un article, pour cela on écrit :
+- article p {}
+// - article > p {}
+- article:p {}
 
 # JS
 ## Module 1
