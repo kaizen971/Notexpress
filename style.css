@@ -433,3 +433,8 @@ invisible {
 .ajoutdeletecards > i {
     padding-top:1em;
 }
+
+/*Texte menu*/
+.rub {
+    color: #dba67b;
+}
