@@ -39,8 +39,12 @@ Adrien : CSS Page d'accueil
     transition: all 0.4s ease;
 }
 .fa-home:hover,
-.fa-sticky-note:hover {
-    transform: scale(1.2);
+.fa-sticky-note:hover,
+.fa-chevron-up:hover {
+    animation-name: jigglebis;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 /* FIN HEADER  */
 
@@ -105,11 +109,14 @@ body {
 }
 /* La case Integration au survol 2*/
 .card-inte:hover {
-    font-style: italic;
-    transform: scale(1.2);
     background-color: #dba67b;
     color: #492825;
+    animation-name: jiggle;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    cursor: pointer;
 }
 
 /* Contenu caché de Intégration 3*/
@@ -117,6 +124,8 @@ body {
     opacity: 0;
     color: #492825;
     font-size: 1.5em;
+    font-style: italic;
+    transition: opacity .5s;
 }
 /* Contenu devient visible au survol de card-inte  4*/
 .card-inte:hover .inte-hover {
@@ -143,11 +152,14 @@ body {
 }
 /* La case Extension au survol 2*/
 .card-extension:hover {
-    font-style: italic;
-    transform: scale(1.2);
+    animation-name: jiggle;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
     background-color: #dba67b;
     color: #492825;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    cursor: pointer;
 }
 
 /* Contenu caché de Extension 3*/
@@ -155,6 +167,8 @@ body {
     opacity: 0;
     color: #492825;
     font-size: 1.5em;
+    font-style: italic;
+    transition: opacity .5s;
 }
 
 /* Contenu devient visible au survol de card-extension  4*/
@@ -182,11 +196,14 @@ body {
 }
 /* La case Developper au survol 2*/
 .card-dev:hover {
-    font-style: italic;
-    transform: scale(1.2);
+    animation-name: jiggle;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
     background-color: #dba67b;
     color: #492825;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    cursor: pointer;
 }
 
 /* Contenu caché de Developper 3*/
@@ -194,6 +211,8 @@ body {
     opacity: 0;
     color: #492825;
     font-size: 1.5em;
+    font-style: italic;
+    transition: opacity .5s;
 }
 
 /* Contenu devient visible au survol de Developper  4*/
@@ -215,7 +234,7 @@ body {
     width: 40%;
     padding: 3em 5em 3em 5em;
     padding: 3em;
-    border-radius: 7em;
+    border-radius: 5em;
     margin: 5em auto 8em;
     text-align: center;
     box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
@@ -226,11 +245,14 @@ body {
 
 /* La case qcm au survol 2*/
 .card-qcm:hover {
-    font-style: italic;
-    transform: scale(1.2);
+    animation-name: jiggle;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
     background-color: #dba67b;
     color: #492825;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    cursor: pointer;
 }
 
 /* Contenu caché de qcm 3*/
@@ -238,6 +260,8 @@ body {
     opacity: 0;
     color: #492825;
     font-size: 1.5em;
+    font-style: italic;
+    transition: opacity .5s;
 }
 
 /* Contenu devient visible au survol de qcm  4*/
@@ -261,7 +285,7 @@ body {
 .footer .fa-home {
     color: #fff;
     font-size: 3em;
-    margin-right: 1em;
+    margin: 0 1em;
     transition: all 0.4s ease;
 }
 .footer .fa-copyright:hover {
@@ -273,3 +297,43 @@ body {
     color: #fff;
     font-size: 2em;
 }
+
+/* animation */
+
+@keyframes jiggle {
+    0% {transform: rotate(0deg)}
+    5% {transform: rotate(-1deg)}
+    10% {transform: rotate(0deg)}
+    15% {transform: rotate(1deg)}
+    20% {transform: rotate(0deg)}
+    25% {transform: rotate(-1deg)}
+    30% {transform: rotate(0deg)}
+    35% {transform: rotate(1deg)}
+    40% {transform: rotate(0deg)}
+    45% {transform: rotate(-1deg)}
+    50% {transform: rotate(0deg)}
+    55% {transform: rotate(1deg)}
+    60% {transform: rotate(0deg)}
+    65% {transform: rotate(-1deg)}
+    70% {transform: rotate(0deg)}
+    100% {transform: rotate(0deg)}
+  }
+
+@keyframes jigglebis {
+    0% {transform: rotate(0deg)}
+    5% {transform: rotate(-3deg)}
+    10% {transform: rotate(0deg)}
+    15% {transform: rotate(3deg)}
+    20% {transform: rotate(0deg)}
+    25% {transform: rotate(-3deg)}
+    30% {transform: rotate(0deg)}
+    35% {transform: rotate(3deg)}
+    40% {transform: rotate(0deg)}
+    45% {transform: rotate(-3deg)}
+    50% {transform: rotate(0deg)}
+    55% {transform: rotate(3deg)}
+    60% {transform: rotate(0deg)}
+    65% {transform: rotate(-3deg)}
+    70% {transform: rotate(0deg)}
+    100% {transform: rotate(0deg)}
+  }
