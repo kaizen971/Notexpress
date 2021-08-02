@@ -25,49 +25,39 @@
          <!-- Carousel de questions -->
          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
           <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">1</li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1">2</li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2">3</li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="3">4</li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="4">5</li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="5">6</li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="6">7</li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="7">8</li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="8">9</li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="9">10</li>
+            <li data-target="#carouselExampleIndicators" v-bind:data-slide-to="n-1" :class="{'active' : n === 1}" v-for="n in nbQuestions">{{n}}</li>
           </ol>
           <div class="carousel-inner">
             <div class="carousel-item" v-for="(item, index) in questions" :class="{'active': index === 0}">
               <!----- Div du QCM ----->
-              <div class="qcm" v-on:change="onChange($event)">
+              <div class="qcm" v-on:change="onChange($event); enableButton()">
                 <h2>{{index+1}} - {{item.question}}</h2>
-                <h2>{{ item }}</h2>
                 <!-- Choix multiples -->
                 <div class="form-check">
-                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="flex-wrap">
+                 <input class="form-check-input" type="radio" v-bind:name="item.question" id="flexRadioDefault1" v-bind:value="item.wrongAnswer">
                  <label class="form-check-label" for="flexRadioDefault1">
-                   flex-wrap
+                   {{item.wrongAnswer}}
                  </label>
                </div>
                <div class="form-check">
-                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="re-flex">
+                 <input class="form-check-input" type="radio" v-bind:name="item.question" id="flexRadioDefault2" v-bind:value="item.wrongAnswer2">
                  <label class="form-check-label" for="flexRadioDefault2">
-                   re-flex
+                  {{item.wrongAnswer2}}
                  </label>
                </div>
                <div class="form-check">
-                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" value="flex-basis">
+                 <input class="form-check-input" type="radio" v-bind:name="item.question" id="flexRadioDefault3" v-bind:value="item.wrongAnswer3">
                  <label class="form-check-label" for="flexRadioDefault3">
-                   flex-basis
+                  {{item.wrongAnswer3}}
                  </label>
                </div>
                <div class="form-check">
-                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" value="flex-grow">
-                 <label class="form-check-label" for="flexRadioDefault3">
-                   flex-grow 
+                 <input class="form-check-input" type="radio" v-bind:name="item.question" id="flexRadioDefault4" v-bind:value="item.rightAnswer">
+                 <label class="form-check-label" for="flexRadioDefault4">
+                  {{item.rightAnswer}}
                  </label>
                </div>
-               <button type="button" class="btn btn-outline-success" href="#carouselExampleIndicators" data-slide="next" v-on:click="getReponse(index)"><i class="fas fa-check-circle "></i></button>
+               <button type="button" class="btn btn-outline-success" href="#carouselExampleIndicators" data-slide="next" v-on:click="getReponse(index)" disabled="true"><i class="fas fa-check-circle"></i></button>
               </div>
               <!-----Fin Div QCM ----->
             </div>
