@@ -165,6 +165,17 @@ Developpement,
     border-radius: 4em;
 }
 
+.card-inte a,
+.card-dev a,
+.card-extension a {
+    color: #fff;
+}
+.card-dev:hover a,
+.card-extension:hover a,
+.card-inte:hover a {
+    color: #492825;
+}
+
 /******************
 *******************
 *******************
@@ -184,7 +195,9 @@ Developpement,
     text-align: center;
     box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
 }
-
+.card-qcm a {
+    color: #fff;
+}
 /* La case qcm au survol */
 .card-qcm:hover {
     animation-name: jiggle;
@@ -196,7 +209,9 @@ Developpement,
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     cursor: pointer;
 }
-
+.card-qcm:hover a {
+    color: #492825;
+}
 /* Contenu caché de qcm */
 .qcm-hover {
     opacity: 0;
@@ -344,4 +359,77 @@ Developpement,
     100% {
         transform: rotate(0deg);
     }
+}
+
+ul {
+    list-style: none;
+    padding-left : 0;
+}
+.sousrub {
+    display: none;
+    color: rgb(255, 255, 255);
+    background-color: #dba67b;
+    font-size: 1em;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    padding: 30px; 
+    border-radius: 1em;
+    white-space:nowrap;
+    
+}
+.sousrub li a{
+    list-style:none;
+    color:white
+
+
+}
+.sousrub li:hover{
+    
+    background-color: #492825;
+}
+.rub:hover .sousrub {
+    display:block;
+    position:absolute;
+    
+    
+}
+
+a {
+    text-decoration: none;
+}
+
+.rub{
+
+    list-style: none;
+}
+
+.btn-validation {
+    font-size: 30px !important;
+    padding: 0 !important;
+    transition: all 0.4s ease !important;
+}
+
+.menu{
+display: flex;
+}
+
+
+
+
+/* Inté rajouts */
+invisible {
+    opacity:0; /*On a rajouté une icone + dans le header pour centrer le titre, ceci la rend invisible*/
+}
+
+/*Boutons ajout + suppr cartes*/
+.ajoutdeletecards {
+    display:flex;
+    flex-direction: column;
+    position: absolute;
+    top:3em;
+    right:0;
+    font-size: 1.6em;
+    color: #dba67b;
+}
+.ajoutdeletecards > i {
+    padding-top:1em;
 }
