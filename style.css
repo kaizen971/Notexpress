@@ -1,31 +1,45 @@
 /********************
 Adrien : CSS Page d'accueil
 ********************/
-
+/* Le body et le display flex pour les cases */
+body {
+    background-color: #fff;
+    font-family: "Raleway", sans-serif;
+}
+.flex {
+    display: flex;
+    justify-content: center;
+}
 /* HEADER  */
 .header {
     background-color: #dba67b;
 }
 
 /* Bouton se connecter */
-.btn {
+.fa-user {
     background-color: #a55c55;
     border: 0;
     border-radius: 20px;
     margin-right: 0.5em;
-    font-size: 2.5em;
+    font-size: 1.6em;
     transition: all 0.4s ease;
 }
 .btn:hover {
     background-color: #a55c55;
     transform: scale(1.2);
 }
+.modal-footer button {
+    background-color: #a55c55;
+    border: 0;
+    transition: all 0.4s ease;
+}
 /* Titre du header  */
 .header h1 {
     font-family: "Teko", sans-serif;
     color: #fff;
-    font-size: 4em;
+    font-size: 2.7em;
     transition: all 0.4s ease;
+    margin-top: 0.3em;
 }
 .header h1:hover {
     transform: scale(1.2);
@@ -34,7 +48,7 @@ Adrien : CSS Page d'accueil
 /* Logos du header sauf bouton "connected" */
 .fa-home {
     color: #a55c55;
-    font-size: 3em;
+    font-size: 2em;
     padding: 25px;
     transition: all 0.4s ease;
 }
@@ -48,14 +62,19 @@ Adrien : CSS Page d'accueil
 }
 /* FIN HEADER  */
 
-/* Liste de logos  */
+/* Bloc ou la il y a la liste des logos */
+.card-logo {
+    display: flex;
+    justify-content: center;
+}
+/* Liste de logos en ligne  */
 .card-logo .far,
 .card-logo .fas,
 .card-logo .fab {
-    font-size: 2.3em;
+    font-size: 1.6em;
     padding: 20px;
     color: #dba67b;
-    padding: 1em 1.5em 3em 1.5em;
+    padding: 1em 1.6em 3em 1.6em;
     transition: all 0.4s ease;
 }
 .card-logo .far:hover,
@@ -67,35 +86,57 @@ Adrien : CSS Page d'accueil
     color: #a55c55;
 }
 
-/* Bloc ou la il y a la liste des logos */
-.card-logo {
-    display: flex;
-    justify-content: center;
-}
+/***************
+****************
+ 		 BODY
+Carte 
+Intégration,
+Extension,
+Developpement,
+****************
+****************/
 
-/* Le body et le display flex pour les cases */
-body {
-    background-color: #fff;
-    font-family: "Raleway", sans-serif;
-}
-.flex {
-    display: flex;
-    justify-content: center;
-}
-
-/* Titre des cards  */
+/* Titres des cards  */
 .card-inte h3,
 .card-extension h3,
 .card-dev h3,
 .card-qcm h3 {
     display: flex;
-    font-size: 3.2em;
+    font-size: 1.5em;
     justify-content: center;
     margin-bottom: 0.5em;
 }
 
-/* La case Integration 1*/
-/* La case Integration 1*/
+/* Contenu caché apparaît au survol */
+.inte-hover,
+.extension-hover,
+.dev-hover {
+    opacity: 0;
+    color: #492825;
+    font-size: 1em;
+    font-style: italic;
+    transition: opacity 0.5s;
+}
+/* Apparition au survol */
+.card-inte:hover .inte-hover,
+.card-dev:hover .dev-hover,
+.card-extension:hover .extension-hover,
+.card-qcm:hover .qcm-hover {
+    opacity: 1;
+}
+
+/* Les logos des cards*/
+.card-inte i,
+.card-extension i,
+.card-dev i,
+.card-qcm i {
+    margin: 1em 0.5em;
+    font-size: 2em;
+}
+
+/* CARTES INTÉ EXTENSION DEV  */
+.card-dev,
+.card-extension,
 .card-inte {
     transition: all 0.4s;
     text-align: center;
@@ -103,130 +144,34 @@ body {
     background-color: #a55c55;
     width: 25%;
     padding: 3em;
-    border-radius: 8em;
+    border-radius: 6em;
     margin: 2em 4em 2em 4em;
     box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
 }
-/* La case Integration au survol 2*/
+.card-dev:hover,
+.card-extension:hover,
 .card-inte:hover {
-    background-color: #dba67b;
-    color: #492825;
     animation-name: jiggle;
     animation-duration: 1s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+    background-color: #dba67b;
+    color: #492825;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     cursor: pointer;
 }
 
-/* Contenu caché de Intégration 3*/
-.inte-hover {
-    opacity: 0;
-    color: #492825;
-    font-size: 1.5em;
-    font-style: italic;
-    transition: opacity .5s;
-}
-/* Contenu devient visible au survol de card-inte  4*/
-.card-inte:hover .inte-hover {
-    opacity: 1;
-}
-/* Les logos de Intégration  5*/
-.card-inte i {
-    margin: 1em 0.5em;
-    font-size: 3em;
-}
-
-/* La case extensions 1*/
-/* La case extensions 1*/
 .card-extension {
-    transition: all 0.4s ease;
-    text-align: center;
-    color: #fff;
-    background-color: #a55c55;
-    width: 25%;
-    padding: 3em;
-    border-radius: 8em;
-    margin: 2em 4em 2em 4em;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
-}
-/* La case Extension au survol 2*/
-.card-extension:hover {
-    animation-name: jiggle;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    background-color: #dba67b;
-    color: #492825;
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-    cursor: pointer;
+    border-radius: 4em;
 }
 
-/* Contenu caché de Extension 3*/
-.extension-hover {
-    opacity: 0;
-    color: #492825;
-    font-size: 1.5em;
-    font-style: italic;
-    transition: opacity .5s;
-}
-
-/* Contenu devient visible au survol de card-extension  4*/
-.card-extension:hover .extension-hover {
-    opacity: 1;
-}
-/* Les logos de extension 5*/
-.card-extension i {
-    margin: 1em 0.5em;
-    font-size: 3em;
-}
-
-/* La case developper 1*/
-/* La case developper 1*/
-.card-dev {
-    transition: all 0.4s;
-    text-align: center;
-    color: #fff;
-    background-color: #a55c55;
-    width: 25%;
-    padding: 3em;
-    border-radius: 8em;
-    margin: 2em 4em 2em 4em;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
-}
-/* La case Developper au survol 2*/
-.card-dev:hover {
-    animation-name: jiggle;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    background-color: #dba67b;
-    color: #492825;
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-    cursor: pointer;
-}
-
-/* Contenu caché de Developper 3*/
-.dev-hover {
-    opacity: 0;
-    color: #492825;
-    font-size: 1.5em;
-    font-style: italic;
-    transition: opacity .5s;
-}
-
-/* Contenu devient visible au survol de Developper  4*/
-.card-dev:hover .dev-hover {
-    opacity: 1;
-}
-/* Les logos de Developper 5*/
-.card-dev i {
-    margin: 1em 0.5em;
-    font-size: 3em;
-}
-
-/* La case qcm 1*/
-/* La case qcm 1*/
+/******************
+*******************
+*******************
+		CASE QCM
+*******************
+*******************
+******************/
 .card-qcm {
     transition: all 0.4s ease;
     color: #fff;
@@ -239,11 +184,8 @@ body {
     text-align: center;
     box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
 }
-.card-qcm:hover {
-    border-radius: 5em;
-}
 
-/* La case qcm au survol 2*/
+/* La case qcm au survol */
 .card-qcm:hover {
     animation-name: jiggle;
     animation-duration: 1s;
@@ -255,85 +197,151 @@ body {
     cursor: pointer;
 }
 
-/* Contenu caché de qcm 3*/
+/* Contenu caché de qcm */
 .qcm-hover {
     opacity: 0;
     color: #492825;
     font-size: 1.5em;
     font-style: italic;
-    transition: opacity .5s;
+    transition: opacity 0.5s;
 }
 
+/* Texte de la card qcm  */
+.card-qcm p {
+    font-size: 0.8em;
+}
 /* Contenu devient visible au survol de qcm  4*/
-.card-qcm:hover .qcm-hover {
-    opacity: 1;
-}
-
-/* Les logos de qcm 5*/
-.card-qcm i {
-    margin: 1em 0.5em;
-    font-size: 3em;
-}
 
 /* FOOTER TIME  */
 .footer {
     background-color: #a55c55;
+    position: absolute;
+    bot: 0;
+    right: 0;
+    left: 0;
 }
 
 /* Logo footer */
-.footer .fa-copyright,
-.footer .fa-home {
+.fa-chevron-up,
+.fa-copyright {
+    font-size: 1.5em;
+    padding: 1em;
     color: #fff;
-    font-size: 3em;
-    margin: 0 1em;
+    text-decoration: none;
     transition: all 0.4s ease;
 }
-.footer .fa-copyright:hover {
+.fa-copyright:hover,
+.fa-chevron-up:hover {
     transform: scale(1.2);
 }
 
 /* Produce by  */
 .footer p {
+    margin-top: 1em;
     color: #fff;
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 /* animation */
 
 @keyframes jiggle {
-    0% {transform: rotate(0deg)}
-    5% {transform: rotate(-1deg)}
-    10% {transform: rotate(0deg)}
-    15% {transform: rotate(1deg)}
-    20% {transform: rotate(0deg)}
-    25% {transform: rotate(-1deg)}
-    30% {transform: rotate(0deg)}
-    35% {transform: rotate(1deg)}
-    40% {transform: rotate(0deg)}
-    45% {transform: rotate(-1deg)}
-    50% {transform: rotate(0deg)}
-    55% {transform: rotate(1deg)}
-    60% {transform: rotate(0deg)}
-    65% {transform: rotate(-1deg)}
-    70% {transform: rotate(0deg)}
-    100% {transform: rotate(0deg)}
-  }
+    0% {
+        transform: rotate(0deg);
+    }
+    5% {
+        transform: rotate(-1deg);
+    }
+    10% {
+        transform: rotate(0deg);
+    }
+    15% {
+        transform: rotate(1deg);
+    }
+    20% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-1deg);
+    }
+    30% {
+        transform: rotate(0deg);
+    }
+    35% {
+        transform: rotate(1deg);
+    }
+    40% {
+        transform: rotate(0deg);
+    }
+    45% {
+        transform: rotate(-1deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    55% {
+        transform: rotate(1deg);
+    }
+    60% {
+        transform: rotate(0deg);
+    }
+    65% {
+        transform: rotate(-1deg);
+    }
+    70% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
 
 @keyframes jigglebis {
-    0% {transform: rotate(0deg)}
-    5% {transform: rotate(-3deg)}
-    10% {transform: rotate(0deg)}
-    15% {transform: rotate(3deg)}
-    20% {transform: rotate(0deg)}
-    25% {transform: rotate(-3deg)}
-    30% {transform: rotate(0deg)}
-    35% {transform: rotate(3deg)}
-    40% {transform: rotate(0deg)}
-    45% {transform: rotate(-3deg)}
-    50% {transform: rotate(0deg)}
-    55% {transform: rotate(3deg)}
-    60% {transform: rotate(0deg)}
-    65% {transform: rotate(-3deg)}
-    70% {transform: rotate(0deg)}
-    100% {transform: rotate(0deg)}
-  }
+    0% {
+        transform: rotate(0deg);
+    }
+    5% {
+        transform: rotate(-3deg);
+    }
+    10% {
+        transform: rotate(0deg);
+    }
+    15% {
+        transform: rotate(3deg);
+    }
+    20% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-3deg);
+    }
+    30% {
+        transform: rotate(0deg);
+    }
+    35% {
+        transform: rotate(3deg);
+    }
+    40% {
+        transform: rotate(0deg);
+    }
+    45% {
+        transform: rotate(-3deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    55% {
+        transform: rotate(3deg);
+    }
+    60% {
+        transform: rotate(0deg);
+    }
+    65% {
+        transform: rotate(-3deg);
+    }
+    70% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
