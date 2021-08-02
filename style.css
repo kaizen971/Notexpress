@@ -345,3 +345,61 @@ Developpement,
         transform: rotate(0deg);
     }
 }
+
+ul {
+    list-style: none;
+    padding-left : 0;
+}
+.sousrub {
+    display: none;
+    color: rgb(255, 255, 255);
+    background-color: #dba67b;
+    font-size: 1em;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    padding: 30px; 
+    border-radius: 1em;
+    white-space:nowrap;
+    
+}
+.sousrub li a{
+    list-style:none;
+    color:white
+
+
+}
+.sousrub li:hover{
+    
+    background-color: #492825;
+}
+.rub:hover .sousrub {
+    display:block;
+    position:absolute;
+    
+    
+}
+
+a {
+    text-decoration: none;
+}
+
+.rub{
+
+    list-style: none;
+}
+
+.btn-validation {
+    font-size: 30px !important;
+    padding: 0 !important;
+    transition: all 0.4s ease !important;
+}
+
+.ajoutdeletecards{
+    display: flex;
+    
+
+
+}
+.menu{
+display: flex;
+
+}
