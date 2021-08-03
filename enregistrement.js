@@ -30,7 +30,13 @@ class Enregistrement{
             paragraphe.appendChild(newContent);
         }
 
+        msgsuppression(idName){
 
+            var paragraphe = document.getElementById(`${idName}`);
+
+            var newContent = document.createTextNode( `Supression autorisée !`);
+            paragraphe.appendChild(newContent);
+        }
 
 
 

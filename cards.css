@@ -5,10 +5,23 @@
 
 .flashcard-list {
     /* padding-left: 0; */
-    display: flex;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
     flex-flow: row wrap;
+    
 }
+.card-inte,.card-dev {
+    transition: all 0.4s;
+    text-align: center;
+    color: #fff;
+    background-color: #a55c55;
+    width:80% !important;
+    padding: 3em;
+    border-radius: 8em;
+    margin: 2em 4em 2em 4em;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
 
+}
 .flashcard-list li {
     list-style-type: none;
     padding: 10px 10px;
@@ -31,6 +44,7 @@
     align-items: center;
     margin: 20px;
     transition: all .3s;
+    
     
     
 }
@@ -73,7 +87,7 @@ button {
 }
   
   
-contenu{
+.contenu{
     
     
     text-align:center;
@@ -150,17 +164,20 @@ contenu{
 }
 
 .card__inner {
-    background-color: #EB6D3F;
+    background-color: #a55c55;
     color: #fff;
     font-size: 24px;
     height: 200px;
-    width: 200px;
-    border-radius: 5%;
+    border: 0;
+    border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;    
     transition: all 1s;
     transform-style: preserve-3d;
+    overflow-wrap:anywhere;
+    height:500px ;
+    
 }
 
 .card:hover .card__inner {
@@ -187,9 +204,9 @@ contenu{
     justify-content: center;
     align-items: center;
   
-    height: 500px;
+   
     border-radius: 5%;
-    background-color: #460511;
+  
     transform: rotateY(180deg); 
 }  
 

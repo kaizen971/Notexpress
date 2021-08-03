@@ -66,6 +66,7 @@ body {
 .card-logo {
     display: flex;
     justify-content: center;
+    margin-bottom: 100px;
 }
 /* Liste de logos en ligne  */
 .card-logo .far,
@@ -439,3 +440,31 @@ invisible {
     color: #dba67b;
 }
 
+span.form-error {
+    display: block;
+    background-color: rgba(255, 100, 100, 1);
+    color: white;
+    padding: 1em;
+    border: 5px;
+    width: 90%
+}
+
+
+span.form-validation{
+
+    display: block;
+    background-color: rgb(109, 255, 51);
+    color: white;
+    padding: 1em;
+    border: 5px;
+    width: 90%
+
+
+
+
+}
+
+.change{
+
+color:rgb(255, 124, 124) !important;
+}

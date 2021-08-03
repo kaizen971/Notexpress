@@ -10,7 +10,7 @@ var cards2 = [];
 var clickpoubelle= false;
 let user ;
 let verifconnexion = false;
-let statueco = true;
+let statueco = false;
 
 
 
@@ -21,14 +21,14 @@ statueco = enregistrement.recupérationsave(statueco,"statuedeco")
 
 if(statueco){
 
-  // enregistrement.msgconnexion(statueco.identifiant)
-  // let btndeconnexion = document.querySelector(".btndeconnexion")
+   enregistrement.msgconnexion(statueco.identifiant)
+  let btndeconnexion = document.querySelector(".btndeconnexion")
 
-  //             btndeconnexion.classList.remove("invisible");
+              btndeconnexion.classList.remove("invisible");
 }
 else{
-  statueco=true;
-  //enregistrement.msgconnexion("Veuillez-vous connecter")
+ 
+  enregistrement.msgconnexion("Veuillez-vous connecter")
 
 }
 
@@ -141,7 +141,7 @@ let app = new Vue({
       Onclickpoubelle:function(){
         clickpoubelle = !clickpoubelle;
         console.log(clickpoubelle);
-       
+        document.querySelector('#icondelete').classList.add("change");
         if(clickpoubelle){
           
           Object.keys(cards).forEach(function (key) {
@@ -151,6 +151,7 @@ let app = new Vue({
 
         }
         else{
+          
           Object.keys(cards).forEach(function (key) {
             
             if(!cards[key].delete){
@@ -172,6 +173,7 @@ let app = new Vue({
      toggleCard: function(card) { 
        console.log("click")// Changement de classe d'un élement objet cards. Switch entre flipped et !flipped
         if(clickpoubelle){
+          
           card.delete = !card.delete
           
           card.active=!card.active
