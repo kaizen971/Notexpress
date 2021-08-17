@@ -32,12 +32,15 @@
     </head>
 
     <body>
+    <div id=app>
+        <div id="parent">
         <!-- NAVBAR BOOTSWATCH -->
         <nav id='top' class="navbar header">
             <a href="#home">
                 <i class="fas fa-home logoHome"></i>
             </a>
 			<h1>Note Express</h1>
+            <p id="Messageconnexion"></p>
             <!-- Button trigger modal -->
             <i
                 class="fas fa-user btn btn-primary"
@@ -54,10 +57,10 @@
                 aria-labelledby="exampleModalLabel"
                 aria-hidden="true"
             >
-                <div class="modal-dialog">
+                <div class="modal-dialog" id="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">
+                            <h5 class="modal-title" id="exampleModalLabel" v-on:click=connnexion()>
                                 Se connecter
                             </h5>
                             <button
@@ -69,18 +72,22 @@
                         </div>
                         <div class="modal-body">
                             <span>Nom d'utilisateur : </span></span>
-                            <input /><br><br>
+                            <input type="identifiant" id="identifiant" v-model="identifiant"/><br><br>
                             <span>Mot de passe : </span>
-                            <input />
+                            <input type="password" id="password" v-model="password" />
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">
+                            <button type="button" class="btn btn-primary" v-on:click=inscription()>
                                 S'inscrire
+                            </button>
+                            <button type="button" class="btn btn-primary btndeconnexion invisible" v-on:click=deconnexion()>
+                               deconnexion
                             </button>
                             <button
                                 type="button"
                                 class="btn btn-secondary"
                                 data-bs-dismiss="modal"
+                                v-on:click=connexion();
                             >
                                 <i class="far fa-check-circle"></i>
                             </button>
@@ -89,6 +96,7 @@
                 </div>
             </div>
         </div>
+        
 		<!-- Fin du modal -->
 
         <!-- Liste Logo  -->
@@ -115,6 +123,7 @@
 				<i class="fab fa-css3"></i>
 				<i class="fas fa-code"></i>
                 <h3>Intégration</h3>
+                
 				<div class="inte-hover">
 					<p>Ici, vous pouvez retrouver des fiches & questions sur les thèmes suivants :</p><strong>HTML || CSS</strong></p>
 				</div>
@@ -170,14 +179,17 @@
 				<i class="far fa-copyright"></i> 
 			</a>  
         </nav>
+    </div>
+    </div>
 		<!-- FIN FOOTER --> 
-
+    
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
             integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
             crossorigin="anonymous"
         ></script>
-        <script src="./app.js"></script>
+        <script type="module" src="./app.js"></script>
+    
     </body>
 </html>

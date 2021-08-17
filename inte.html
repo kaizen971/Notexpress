@@ -28,21 +28,72 @@
         />
         <!-- CSS NORMAL  -->
         <link rel="stylesheet" href="./style.css" />
-        <link rel="stylesheet" href="./style2.css" />
+        <link rel="stylesheet" href="./cards.css" />
         <title>Vue JS - Gallery Image</title>
     </head>
 
     <body>
+        <div id=app>
+        <div id="parent">
         <!-- NAVBAR BOOTSWATCH -->
         <nav id='top' class="navbar header">
             <a href="index.html">
                 <i class="fas fa-home logoHome"></i>
             </a>
 			<h1>Intégration</h1>
-            
-            <i class="fas fa-plus invisible"></i>
+            <p id="Messageconnexion"></p>
+           
+            <i
+            class="fas fa-user btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal2"
+        ></i>
             <!-- Button trigger modal -->
-        
+            <div
+            class="modal fade"
+            id="exampleModal2"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog" id="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel" v-on:click=connnexion()>
+                            Se connecter
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <span>Nom d'utilisateur : </span></span>
+                        <input type="identifiant" id="identifiant" v-model="identifiant"/><br><br>
+                        <span>Mot de passe : </span>
+                        <input type="password" id="password" v-model="password" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" v-on:click=inscription()>
+                            S'inscrire
+                        </button>
+                        <button type="button" class="btn btn-primary btndeconnexion invisible" v-on:click=deconnexion()>
+                           deconnexion
+                        </button>
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                            v-on:click=connexion();
+                        >
+                            <i class="far fa-check-circle"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
         </nav>
 		<!-- FIN NAVBAR BOOTSWATCH -->
 
@@ -78,7 +129,7 @@
         </div>
 
         <!--Bloc ajout suppr cartes-->
-        <div class="ajoutdeletecards">
+        <div class="ajoutdeletecards" id="ajoutdeletecards">
             <!--Modal ajout-->
             <i class="fas fa-plus" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
 			<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -93,11 +144,11 @@
                         <div class="modal-body">
                             <fieldset>
                                 <legend>Question</legend>
-                                <textarea name="query" id="query"></textarea>
+                                <textarea name="query" id="question"></textarea>
                             </fieldset>
                             <fieldset>
                                 <legend>Réponse</legend>
-                                <textarea name="query" id="query"></textarea>
+                                <textarea name="query" id="reponse"></textarea>
                             </fieldset>
                            <fieldset>
                                 <legend>Catégorie</legend>
@@ -121,60 +172,50 @@
                             </fieldset>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-plus btn-validation"></i></button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" v-on:click="ajoutcard"><i class="fas fa-plus btn-validation"></i></button>
                         </div>
                     </div>
                 </div>
             </div>
             <!--Bouton suppr-->
-            <i class="fas fa-trash"></i>
+            <i class="fas fa-trash" v-on:click=Onclickpoubelle() id="icondelete"></i>
+            <p ></p>
         </div>
         <!-- Bloc carte 1  -->
-        <section class="flex">
-            <div class="card-inte">
-                <h3>Question</h3>
-				<p>Voici la question. <br> Cliquez pour voir la réponse.</p>
+        
+            <div class="flashcard-list">
+       
+
+            
+                <!-- Directive v-on (pour un évènement) -->
+                <!-- Directive v-for (boucle) -->
+                <div v-on:click="toggleCard(card)" v-for="card in cards">
+               
+                    <div class="card  " >
+                   <div class="card__inner" v-bind:class="{ active: card.active, card__innerActive: card.flipped }">
+                    
+                  <div    class="card__content card_content--front">
+                      <h3>Question:</h3>
+                       <p class ="contenu" >{{card.question}}</p>
+                    </div>    
+                    
+                    
+                     <div    class="card__content card__content--back">
+                        <h3>Réponse:</h3>     
+                    <p class="contenu">{{card.reponse}}</p>
+                               
+                            <!-- j'ai réaliser un partage -->
+                    </div>
+                    </div>  
+                    </div>
+                
+                    
+                </div>
+                
             </div>
-        <!-- Bloc carte 2  -->
-            <div class="card-dev">
-                <h3>Question</h3>
-				<p>Voici la question. <br> Cliquez pour voir la réponse.</p>
-            </div>
-        <!-- Bloc carte 3  -->
-            <div class="card-dev">
-                <h3>Question</h3>
-				<p>Voici la question. <br> Cliquez pour voir la réponse.</p>
-            </div>
-        <!-- Bloc carte 4  -->
-            <div class="card-dev">
-                <h3>Question</h3>
-				<p>Voici la question. <br> Cliquez pour voir la réponse.</p>
-            </div>
-        </section>
-        <!-- Bloc carte 5  -->
-        <section class="flex">
-            <div class="card-dev">
-                <h3>Question</h3>
-				<p>Voici la question. <br> Cliquez pour voir la réponse.</p>
-            </div>
-        <!-- Bloc carte 6  -->
-            <div class="card-dev">
-                <h3>Question</h3>
-				<p>Voici la question. <br> Cliquez pour voir la réponse.</p>
-            </div>
-        <!-- Bloc carte 7  -->
-            <div class="card-dev">
-                <h3>Question</h3>
-				<p>Voici la question. <br> Cliquez pour voir la réponse.</p>
-            </div>
-        <!-- Bloc carte 8  -->
-            <div class="card-dev">
-                <h3>Question</h3>
-				<p>Voici la question. <br> Cliquez pour voir la réponse.</p>
-            </div>
-        </section>
+       
 			
-        </section>
+        
 
 
 
@@ -189,13 +230,15 @@
 			</a>  
         </nav>
 		<!-- FIN FOOTER --> 
-
+    </div>
+</div>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
             integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
             crossorigin="anonymous"
         ></script>
-        <script src="./app.js"></script>
+        <script type="module" src="./app.js"></script>
+    
     </body>
 </html>
