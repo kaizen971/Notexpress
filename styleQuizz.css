@@ -1,0 +1,45 @@
+body {
+    background-color: snow;
+}
+
+header {
+    background-color: #DEA22E;
+    padding: 2em 0;
+}
+
+.home {
+    background-color: #DE742E;
+}
+
+.qcm {
+    border: 2px solid #DE742E;
+    margin: 2em;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+h2, .btn-outline-success {
+    width: 100%;
+}
+
+h2 {
+    text-align: center;
+    padding: 2em;
+}
+
+.form-check {
+    flex: 1;
+    padding: 2em;
+}
+
+.carousel-indicators li{
+    height: 30px;
+    text-indent: 0;
+    text-align: center;
+    position: relative;
+    border: 1px solid black;
+}
+
+.carousel-indicators {
+    bottom: -20px;
+}
